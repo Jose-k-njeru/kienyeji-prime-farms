@@ -554,11 +554,12 @@ renderProducts();
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
   import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut
-  } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut
+} from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCbosxhFKUXdnLUpK-b-K21t3QDzghStWI",
@@ -572,12 +573,15 @@ renderProducts();
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  window.farmFirebase = {
-    auth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signOut
-  };
+  
+window.farmFirebase = {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut
+};
+  
 
   console.log("Firebase connected successfully.");
 </script>
