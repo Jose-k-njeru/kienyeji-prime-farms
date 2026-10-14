@@ -469,6 +469,8 @@ async function demoSignIn(event) {
     );
 
     message.textContent = "Sign in successful!";
+alert("Welcome back to Kienyeji Prime Farms!");
+showPage("home");
   } catch (error) {
     message.textContent = "Sign-in failed: " + error.message;
   }
@@ -491,8 +493,10 @@ async function demoSignUp(event) {
       password
     );
 
-    message.textContent = "Account created successfully! You can now sign in.";
-    form.reset();
+    message.textContent = "Account created successfully!";
+form.reset();
+alert("Your account is ready! Welcome to Kienyeji Prime Farms!");
+showPage("home");
   } catch (error) {
     message.textContent = "Sign-up failed: " + error.message;
   }
