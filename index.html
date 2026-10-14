@@ -426,17 +426,17 @@ function renderProducts() {
     "<p>No listings to manage.</p>";
 }
 
-function demoSignIn(event) {
+async function demoSignIn(event) {
   event.preventDefault();
   document.getElementById("loginMessage").textContent =
-    "Demo only. Secure sign-in will be added after Firebase setup.";
+    "Connecting secure sign-in. Please wait...";
 }
 
 function demoSignUp(event) {
   event.preventDefault();
   document.getElementById("signupMessage").textContent =
     "Demo only. No account or password has been saved.";
-}
+} 
 
 function addProduct(event) {
   event.preventDefault();
@@ -514,6 +514,39 @@ function demoLogout() {
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
 </script>
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCbosxhFKUXdnLUpK-b-K21t3QDzghStWI",
+    authDomain: "kienyenji-prime-farms.firebaseapp.com",
+    projectId: "kienyenji-prime-farms",
+    storageBucket: "kienyenji-prime-farms.firebasestorage.app",
+    messagingSenderId: "242325764205",
+    appId: "1:242325764205:web:101f207aef01f971a0e764"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  window.farmFirebase = {
+    auth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+  };
+
+  console.log("Firebase connected successfully.");
+</script>
+  
 
 </body>
 </html>
