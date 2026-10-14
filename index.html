@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102719">
+<meta name="description" content="Kienyeji Prime Farms - Quality improved Kienyeji chickens and live birds.">
+<title>Kienyeji Prime Farms</title>
+
+<style>
+:root {
+  --green: #123b27;
+  --dark: #0b2116;
+  --gold: #d9b45b;
+  --cream: #fffaf0;
+  --white: #ffffff;
+  --text: #24352a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+header {
+  background: var(--dark);
+  color: white;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.brand {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 19px;
+}
+.brand small {
+  display: block;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 4px;
+}
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav button {
+  background: transparent;
+  color: white;
+  border: 0;
+  padding: 9px;
+  cursor: pointer;
+}
+button { cursor: pointer; }
+.hero {
+  background: linear-gradient(135deg, #0b2116, #28563a);
+  color: white;
+  text-align: center;
+  padding: 65px 18px;
+}
+.hero .crown { font-size: 38px; color: var(--gold); }
+.hero h1 {
+  color: var(--gold);
+  font-size: clamp(30px, 7vw, 48px);
+  margin: 12px 0;
+}
+.hero p { line-height: 1.8; max-width: 570px; margin: 12px auto; }
+.slogan { color: #f0d99b; font-style: italic; }
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 6px 3px;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+main { max-width: 1100px; margin: auto; padding: 28px 16px; }
+section { margin-bottom: 40px; }
+h2 { color: var(--green); }
+.section-intro { line-height: 1.7; }
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.feature, .product, .panel {
+  background: white;
+  border: 1px solid #e9e1d0;
+  border-radius: 12px;
+  padding: 16px;
+}
+.feature { text-align: center; }
+.feature b { display: block; margin: 8px; color: var(--green); }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.product { overflow-wrap: anywhere; }
+.product-photo {
+  height: 145px;
+  background: #edf2e9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  overflow: hidden;
+}
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.price { color: var(--green); font-size: 22px; font-weight: bold; }
+.muted { color: #69756c; font-size: 13px; }
+.status { font-weight: bold; color: #24733e; }
+form { display: grid; gap: 12px; }
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5cc;
+  border-radius: 7px;
+  font: inherit;
+  background: white;
+}
+textarea { min-height: 80px; }
+label { font-size: 14px; font-weight: bold; }
+.hidden { display: none !important; }
+.notice {
+  background: #fff3cf;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 28px 16px;
+  text-align: center;
+  line-height: 1.9;
+}
+footer strong { color: var(--gold); }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    KIENYEJI PRIME
+    <small>FARMS</small>
+  </div>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('products')">Chickens</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('contact')">Contact</button>
+    <button onclick="showPage('account')">My Account</button>
+  </nav>
+</header>
+
+<div id="home" class="page">
+  <div class="hero">
+    <div class="crown">♛</div>
+    <h1>Kienyeji Prime Farms</h1>
+    <p class="slogan">
+      Healthy Chickens • Better Yields • Brighter Future
+    </p>
+    <p>
+      Welcome to our farm! Discover our improved Kienyeji
+      chickens, explore available birds and contact us to order.
+      Quality poultry, raised with care.
+    </p>
+    <button class="btn" onclick="showPage('products')">
+      Explore Our Chickens
+    </button>
+    <button class="btn btn-outline" onclick="showPage('contact')">
+      Contact Our Farm
+    </button>
+  </div>
+
+  <main>
+    <section>
+      <h2>Why Choose Our Farm?</h2>
+      <div class="features">
+        <div class="feature">🐓<b>Improved Kienyeji</b><span class="muted">Our poultry speciality</span></div>
+        <div class="feature">🌱<b>Careful Rearing</b><span class="muted">Responsible farm management</span></div>
+        <div class="feature">🤝<b>Customer Care</b><span class="muted">Friendly service</span></div>
+        <div class="feature">⭐<b>Quality First</b><span class="muted">Poultry raised with care</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Chickens</h2>
+      <p class="section-intro">See what is available at our farm.</p>
+      <div id="featuredProducts" class="products"></div>
+      <button class="btn" onclick="showPage('products')">View All Chickens</button>
+    </section>
+  </main>
+</div>
+
+<div id="products" class="page hidden">
+  <main>
+    <h2>Our Chickens</h2>
+    <p class="section-intro">
+      Browse our poultry listings and prices in Kenyan shillings.
+      Contact us to confirm availability before travelling.
+    </p>
+    <div id="allProducts" class="products"></div>
+  </main>
+</div>
+
+<div id="about" class="page hidden">
+  <main>
+    <h2>About Kienyeji Prime Farms</h2>
+    <div class="panel">
+      <h3>Our Story</h3>
+      <p>
+        Kienyeji Prime Farms is a growing poultry business focused
+        on improved Kienyeji chickens and live birds.
+      </p>
+      <h3>Our Mission</h3>
+      <p>
+        To provide customers with quality poultry, responsible
+        farming practices and reliable customer service.
+      </p>
+      <h3>Our Vision</h3>
+      <p>
+        To grow into a trusted poultry brand serving households,
+        farmers and businesses.
+      </p>
+      <p class="slogan">
+        Healthy Chickens • Better Yields • Brighter Future
+      </p>
+    </div>
+  </main>
+</div>
+
+<div id="contact" class="page hidden">
+  <main>
+    <h2>Contact Our Farm</h2>
+    <div class="panel">
+      <p>Interested in our chickens? Contact us to enquire about prices, availability and collection.</p>
+      <label for="phone">Farm WhatsApp number</label>
+      <input id="phone" type="tel" placeholder="Enter your number, e.g. 2547XXXXXXXX">
+      <button class="btn" onclick="savePhone()">Save Number on This Device</button>
+      <p class="muted">This number is stored only in this browser in this prototype.</p>
+      <button class="btn" onclick="contactWhatsApp()">Chat on WhatsApp</button>
+    </div>
+
+    <section>
+      <h2>Find Our Farm</h2>
+      <p>Our Google Map and directions will be added when Joseph provides the farm location.</p>
+      <div class="notice">📍 Farm location: To be added.</div>
+    </section>
+  </main>
+</div>
+
+<div id="account" class="page hidden">
+  <main>
+    <h2>My Account</h2>
+    <div class="notice">
+      Prototype only: these forms do not create secure online accounts.
+      Firebase authentication will be connected in the next stage.
+      Do not enter a real or reused password here.
+    </div>
+
+    <div class="panel">
+      <h3>Sign In</h3>
+      <form onsubmit="demoSignIn(event)">
+        <label>Email</label>
+        <input type="email" required placeholder="Your email">
+        <label>Password</label>
+        <input type="password" required placeholder="Demo only">
+        <button class="btn" type="submit">Sign In (Demo)</button>
+      </form>
+      <p id="loginMessage"></p>
+    </div>
+
+    <br>
+
+    <div class="panel">
+      <h3>Create an Account (Demo)</h3>
+      <form onsubmit="demoSignUp(event)">
+        <label>Your name</label>
+        <input required placeholder="Full name">
+        <label>Email</label>
+        <input type="email" required placeholder="Your email">
+        <label>Password</label>
+        <input type="password" minlength="6" required placeholder="Demo only">
+        <button class="btn" type="submit">Sign Up (Demo)</button>
+      </form>
+      <p id="signupMessage"></p>
+    </div>
+
+    <div id="admin" class="panel hidden">
+      <h3>Farm Owner Dashboard (Local Demo)</h3>
+      <p class="muted">
+        This demo dashboard is not protected by secure authentication.
+        Do not publish it as a real admin system.
+      </p>
+      <form onsubmit="addProduct(event)">
+        <label>Chicken name</label>
+        <input id="pname" required placeholder="e.g. Improved Kienyeji Cock">
+        <label>Price in KSh</label>
+        <input id="pprice" type="number" min="1" required placeholder="e.g. 1500">
+        <label>Age or details</label>
+        <input id="pdetails" required placeholder="e.g. 5 months old">
+        <label>Photo URL (optional)</label>
+        <input id="pimage" type="url" placeholder="https://...">
+        <label>Availability</label>
+        <select id="pstatus">
+          <option>Available</option>
+          <option>Limited Stock</option>
+          <option>Sold Out</option>
+        </select>
+        <button class="btn" type="submit">Add Chicken</button>
+      </form>
+      <h3>Manage Listings</h3>
+      <div id="manageProducts"></div>
+      <button class="btn btn-outline" onclick="demoLogout()">Exit Demo Dashboard</button>
+    </div>
+  </main>
+</div>
+
+<footer>
+  <strong>KIENYEJI PRIME FARMS</strong><br>
+  Healthy Chickens • Better Yields • Brighter Future<br>
+  Improved Kienyeji Chickens & Live Birds<br>
+  <span class="muted">© <span id="year"></span> Kienyeji Prime Farms</span>
+</footer>
+
+<script>
+const starterProducts = [
+  {
+    id: 1,
+    name: "Improved Kienyeji Cock",
+    price: 1500,
+    details: "Example listing - replace with your actual stock.",
+    image: "",
+    status: "Available"
+  },
+  {
+    id: 2,
+    name: "Improved Kienyeji Hen",
+    price: 1200,
+    details: "Example listing - replace with your actual stock.",
+    image: "",
+    status: "Available"
+  }
+];
+
+function loadProducts() {
+  try {
+    const saved = localStorage.getItem("kpf_products");
+    return saved ? JSON.parse(saved) : starterProducts;
+  } catch (e) {
+    return starterProducts;
+  }
+}
+
+let products = loadProducts();
+let demoOwner = false;
+
+function saveProducts() {
+  localStorage.setItem("kpf_products", JSON.stringify(products));
+}
+
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+  renderProducts();
+  window.scrollTo(0, 0);
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;",
+    '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+function productCard(p, manage = false) {
+  const photo = p.image
+    ? `<img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" onerror="this.parentElement.innerHTML='🐓'">`
+    : "🐓";
+
+  return `
+    <article class="product">
+      <div class="product-photo">${photo}</div>
+      <h3>${escapeHTML(p.name)}</h3>
+      <p class="price">KSh ${Number(p.price).toLocaleString("en-KE")}</p>
+      <p>${escapeHTML(p.details)}</p>
+      <p class="status">${escapeHTML(p.status)}</p>
+      ${manage
+        ? `<button class="btn" onclick="deleteProduct(${Number(p.id)})">Delete Listing</button>`
+        : `<button class="btn" onclick="orderProduct(${Number(p.id)})">Enquire on WhatsApp</button>`}
+    </article>`;
+}
+
+function renderProducts() {
+  const available = products.filter(p => p.status !== "Sold Out");
+  document.getElementById("featuredProducts").innerHTML =
+    available.slice(0, 3).map(p => productCard(p)).join("") ||
+    "<p>No chickens listed yet.</p>";
+
+  document.getElementById("allProducts").innerHTML =
+    products.map(p => productCard(p)).join("") ||
+    "<p>No products listed yet.</p>";
+
+  document.getElementById("manageProducts").innerHTML =
+    products.map(p => productCard(p, true)).join("") ||
+    "<p>No listings to manage.</p>";
+}
+
+function demoSignIn(event) {
+  event.preventDefault();
+  document.getElementById("loginMessage").textContent =
+    "Demo only. Secure sign-in will be added after Firebase setup.";
+}
+
+function demoSignUp(event) {
+  event.preventDefault();
+  document.getElementById("signupMessage").textContent =
+    "Demo only. No account or password has been saved.";
+}
+
+function addProduct(event) {
+  event.preventDefault();
+  if (!demoOwner) {
+    alert("Demo dashboard is not active.");
+    return;
+  }
+
+  products.unshift({
+    id: Date.now(),
+    name: document.getElementById("pname").value.trim(),
+    price: Number(document.getElementById("pprice").value),
+    details: document.getElementById("pdetails").value.trim(),
+    image: document.getElementById("pimage").value.trim(),
+    status: document.getElementById("pstatus").value
+  });
+
+  saveProducts();
+  event.target.reset();
+  renderProducts();
+  alert("Listing saved on this device.");
+}
+
+function deleteProduct(id) {
+  if (!demoOwner) return;
+  if (!confirm("Permanently delete this local listing?")) return;
+  products = products.filter(p => p.id !== id);
+  saveProducts();
+  renderProducts();
+}
+
+function orderProduct(id) {
+  const p = products.find(item => item.id === id);
+  if (!p) return;
+
+  const phone = localStorage.getItem("kpf_phone");
+  if (!phone) {
+    alert("Please enter the farm WhatsApp number on the Contact page first.");
+    showPage("contact");
+    return;
+  }
+
+  const message = `Hello Kienyeji Prime Farms. I am enquiring about ${p.name}, listed at KSh ${p.price}. Is it available?`;
+  window.open(
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+function savePhone() {
+  const phone = document.getElementById("phone").value.replace(/\s/g, "");
+  if (!/^[0-9]{10,15}$/.test(phone)) {
+    alert("Enter a valid number with country code, e.g. 2547XXXXXXXX.");
+    return;
+  }
+  localStorage.setItem("kpf_phone", phone);
+  alert("Number saved on this device.");
+}
+
+function contactWhatsApp() {
+  const phone = localStorage.getItem("kpf_phone");
+  if (!phone) {
+    alert("Enter and save the farm WhatsApp number first.");
+    return;
+  }
+  window.open("https://wa.me/" + phone, "_blank");
+}
+
+function demoLogout() {
+  demoOwner = false;
+  document.getElementById("admin").classList.add("hidden");
+  alert("Demo dashboard closed.");
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+renderProducts();
+</script>
+
+</body>
+</html>
