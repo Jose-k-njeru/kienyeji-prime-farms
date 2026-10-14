@@ -278,17 +278,43 @@ footer strong { color: var(--gold); }
       Do not enter a real or reused password here.
     </div>
 
-    <div class="panel">
-      <h3>Sign In</h3>
-      <form onsubmit="demoSignIn(event)">
-        <label>Email</label>
-        <input type="email" required placeholder="Your email">
-        <label>Password</label>
-        <input type="password" required placeholder="Demo only">
-        <button class="btn" type="submit">Sign In (Demo)</button>
-      </form>
-      <p id="loginMessage"></p>
+    
+
+<div class="panel">
+  <h3>Sign In</h3>
+
+  <form onsubmit="demoSignIn(event)">
+    <label>Email</label>
+    <input id="loginEmail" type="email" required placeholder="Your email">
+
+    <label>Password</label>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <input
+        id="loginPassword"
+        type="password"
+        required
+        placeholder="Your password"
+        style="flex:1; min-width:0;"
+      >
+      <button
+        type="button"
+        class="btn"
+        onclick="togglePassword('loginPassword', this)"
+        aria-label="Show or hide password"
+      >👁️</button>
     </div>
+
+    <button class="btn" type="submit">Sign In</button>
+
+    <button
+      class="btn"
+      type="button"
+      onclick="resetPassword()"
+    >Forgot Password?</button>
+  </form>
+
+  <p id="loginMessage"></p>
+</div>
 
     <br>
 
