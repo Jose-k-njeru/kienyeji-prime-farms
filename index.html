@@ -574,6 +574,46 @@ function demoLogout() {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 renderProducts();
+
+  
+function togglePassword(inputId, button) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+
+  if (input.type === "password") {
+    input.type = "text";
+    button.textContent = "🙈";
+  } else {
+    input.type = "password";
+    button.textContent = "👁️";
+  }
+}
+
+async function resetPassword() {
+  const email = document.getElementById("loginEmail").value.trim();
+  const message = document.getElementById("loginMessage");
+
+  if (!email) {
+    message.textContent = "Please enter your email address first.";
+    document.getElementById("loginEmail").focus();
+    return;
+  }
+
+  try {
+    await window.farmFirebase.sendPasswordResetEmail(
+      window.farmFirebase.auth,
+      email
+    );
+
+    message.textContent =
+      "If an account exists for this email, a password-reset email will be sent. Check your inbox and spam folder.";
+  } catch (error) {
+    console.error("Password reset error:", error.code);
+    message.textContent =
+      "Password reset failed. Please check your email and try again.";
+  }
+}
+
 </script>
 
 
