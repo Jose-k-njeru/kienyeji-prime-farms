@@ -426,11 +426,28 @@ function renderProducts() {
     "<p>No listings to manage.</p>";
 }
 
+
 async function demoSignIn(event) {
   event.preventDefault();
-  document.getElementById("loginMessage").textContent =
-    "Connecting secure sign-in. Please wait...";
+
+  const form = event.currentTarget;
+  const email = form.querySelector('input[type="email"]').value.trim();
+  const password = form.querySelector('input[type="password"]').value;
+  const message = document.getElementById("loginMessage");
+
+  try {
+    await window.farmFirebase.signInWithEmailAndPassword(
+      window.farmFirebase.auth,
+      email,
+      password
+    );
+
+    message.textContent = "Sign in successful!";
+  } catch (error) {
+    message.textContent = "Sign-in failed: " + error.message;
+  }
 }
+  
 
 function demoSignUp(event) {
   event.preventDefault();
