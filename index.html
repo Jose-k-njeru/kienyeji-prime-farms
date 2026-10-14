@@ -449,11 +449,29 @@ async function demoSignIn(event) {
 }
   
 
-function demoSignUp(event) {
+
+async function demoSignUp(event) {
   event.preventDefault();
-  document.getElementById("signupMessage").textContent =
-    "Demo only. No account or password has been saved.";
-} 
+
+  const form = event.currentTarget;
+  const email = form.querySelector('input[type="email"]').value.trim();
+  const password = form.querySelector('input[type="password"]').value;
+  const message = document.getElementById("signupMessage");
+
+  try {
+    await window.farmFirebase.createUserWithEmailAndPassword(
+      window.farmFirebase.auth,
+      email,
+      password
+    );
+
+    message.textContent = "Account created successfully! You can now sign in.";
+    form.reset();
+  } catch (error) {
+    message.textContent = "Sign-up failed: " + error.message;
+  }
+}
+  
 
 function addProduct(event) {
   event.preventDefault();
